@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from "react"
 import Header from "./header"
+import Navbar from "./navbar"
 
-function Nav() {
-  return (
-    <div className="flex flex-col ">
-      <Header />
-    </div>
-  )
+export default function Nav(){
+  
+  const [ isNavbarOpen, setNavbarOpen ] = useState(false)
+  
+  return(
+    <>
+    <Header isOpen={isNavbarOpen} open={()=> setNavbarOpen(true)} close={()=> setNavbarOpen(false)} />
+    {!isNavbarOpen ? <span></span> : <Navbar close={()=> setNavbarOpen(false)} />}
+    </>
+    )
 }
-
-export default Nav

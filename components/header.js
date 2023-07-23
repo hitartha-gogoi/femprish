@@ -25,14 +25,16 @@ function Header({ isOpen, open, close }) {
   }, [])
   
   return (
-    <div className={`flex flex-row justify-between items-center flex-wrap h-14 w-screen  fixed top-0 left-0 z-[1600] ${show ? 'bg-black': 'bg-transparent' }`}>
-    <div className="flex">
+    <div className={`flex flex-row justify-between items-center flex-wrap h-24 w-screen  fixed top-0 left-0 z-[1600] ${show ? 'bg-[#F8DFDB] shadow-2xl shadow-gray-200': 'bg-transparent' }`}>
+    <div className="flex flex-row justify-center items-center">
   <Link href="/">
-    <img className='h-8 w-24 ml-4' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/1920px-Logonetflix.png' />
+  <div className="flex flex-row justify-center items-center">
+  {!isOpen ? <MenuIcon className="text-black h-6 w-6" onClick={open} /> : <XIcon className="text-white h-6 w-6" onClick={close} />}
+    <img className='h-20 w-48 ml-4 ' src='https://femprish.websitedesignerbuddy.live/wp-content/uploads/2023/05/femprishlogo.png' />
+  </div>
   </Link>
     </div>
-    <img className="h-8 w-8 mx-2" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" />
-    </div>
+      </div>
   )
 }
 
